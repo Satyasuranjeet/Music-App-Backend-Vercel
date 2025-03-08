@@ -1,4 +1,3 @@
-from datetime import datetime, timedelta
 from flask import Flask, jsonify, request
 from flask_pymongo import PyMongo
 from bson import ObjectId
@@ -387,8 +386,7 @@ def remove_song_from_playlist(playlist_id):
 
 # Vercel serverless function handler
 def handler(request, *args, **kwargs):
-    with app.app_context():
-        return app.full_dispatch_request()
+    return app(request.environ, start_response)
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))  # Use PORT from environment, default to 5000
