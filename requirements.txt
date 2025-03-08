@@ -1,6 +1,5 @@
-Flask
-Flask-PyMongo
-Flask-CORS
-PyJWT
-requests
-gunicorn
+Flask==2.0.1
+flask_pymongo==2.3.0
+requests==2.25.1
+flask_cors==3.0.10
+PyJWT==2.1.0
